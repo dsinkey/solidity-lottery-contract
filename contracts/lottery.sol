@@ -1,11 +1,11 @@
 pragma solidity ^0.4.17;
 
 contract Lottery {
-    address public mananger;
+    address public manager;
     address[] public players;
 
     function Lottery() public{
-        mananger = msg.sender;
+        manager = msg.sender;
     }
 
     function enter() public payable {
@@ -24,7 +24,7 @@ contract Lottery {
     }
 
     modifier restricted(){
-        require(msg.sender == mananger);
+        require(msg.sender == manager);
         _;
     }
 
